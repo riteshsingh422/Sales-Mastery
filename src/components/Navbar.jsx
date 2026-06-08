@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); // Only for mobile menu toggle if needed
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -32,10 +33,10 @@ export default function Navbar() {
         style={{
           width: "100%",
           maxWidth: "1040px",
+          height: "75px",
           display: "flex",
-          flexDirection: "column",           // Changed to column for mobile
           alignItems: "center",
-          justifyContent: "center",
+          justifyContent: "space-between",
           padding: "14px 24px",
           borderRadius: "132px",
           border: "1.33px solid rgba(255,255,255,0.1)",
@@ -44,51 +45,51 @@ export default function Navbar() {
           WebkitBackdropFilter: "blur(20px)",
           boxSizing: "border-box",
           boxShadow: scrolled ? "0 8px 40px rgba(0,0,0,0.6)" : "none",
-          transition: "box-shadow 0.3s ease, height 0.3s ease",
+          transition: "box-shadow 0.3s ease",
           pointerEvents: "all",
         }}
         className="nav-pill"
       >
-        {/* Main Row: Logo + Button */}
-        <div style={{
-          width: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}>
+        {/* LEFT — Logo + Nav links */}
+        <div style={{ display: "flex", alignItems: "center", gap: "32px" }} className="nav-left">
           <Logo />
-          <EnrollButton />
+          <NavLinks />
         </div>
 
-        {/* Nav Links - Shown on all screens, stacked on mobile */}
-        <NavLinks />
+        {/* RIGHT — Enroll Now */}
+        <EnrollButton />
       </div>
 
       {/* Responsive Styles */}
       <style jsx>{`
         @media (max-width: 768px) {
           .nav-pill {
-            padding: 14px 20px !important;
-            border-radius: 24px !important;   /* Slightly softer on mobile */
+            padding: 12px 16px !important;
+            height: 68px !important;
+          }
+          
+          .nav-left {
+            gap: 16px !important;
           }
           
           .nav-links {
-            margin-top: 12px !important;
-            gap: 16px !important;
-            width: 100% !important;
-            justify-content: center !important;
+            display: none !important; /* Hides links on mobile to prevent crowding */
+          }
+        }
+
+        @media (max-width: 480px) {
+          nav {
+            padding: ${scrolled ? "12px 16px" : "32px 16px 0 16px"} !important;
+          }
+          
+          .nav-pill {
+            padding: 10px 14px !important;
           }
         }
 
         @media (min-width: 769px) {
-          .nav-pill {
-            flex-direction: row !important;
-            height: 75px !important;
-          }
-          
           .nav-links {
-            margin-top: 0 !important;
-            width: auto !important;
+            display: flex !important;
           }
         }
       `}</style>
@@ -185,6 +186,7 @@ function EnrollButton() {
           width: "150px",
           height: "45px",
         }}
+        className="enroll-btn-container"
       >
         {/* Rotating conic gradient border */}
         <div
