@@ -4,6 +4,9 @@ import circleImg from "/src/assets/circle.png";
 import icon1 from "/src/assets/icon1.png";
 import icon2 from "/src/assets/icon2.png";
 import icon3 from "/src/assets/icon3.png";
+import video1 from "/src/assets/video1.mp4";
+import video2 from "/src/assets/video2.mp4";
+import heroVideo from "/src/assets/hero-video.mp4";
 
 export default function ForWhom() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -270,10 +273,10 @@ function SuccessStories({ isMobile }) {
   const STEP = CARD_WIDTH + CARD_GAP;
 
   const videos = [
-    "/src/assets/video1.mp4",
-    "/src/assets/video2.mp4",
-    "/src/assets/hero-video.mp4",
-  ];
+  video1,
+  video2,
+  heroVideo,
+];
   const total = videos.length;
 
   const [centerIndex, setCenterIndex] = useState(0);

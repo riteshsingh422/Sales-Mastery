@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import GroupOne from "/src/assets/Group.png";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -102,7 +103,7 @@ function Logo() {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer", flexShrink: 0 }}>
       <img
-        src="/src/assets/Group.png"
+        src={GroupOne}
         alt="Logo"
         style={{ width: "31px", height: "36px", objectFit: "contain", flexShrink: 0 }}
       />

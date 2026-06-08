@@ -1,5 +1,6 @@
 import { useState } from "react";
 import FooterBg from "/src/assets/faqbg.png";
+import GroupOne from "/src/assets/Group.png";
 
 const faqs = [
   {
@@ -151,7 +152,7 @@ export default function FAQ() {
 
                 {/* Icon — 2×2 grid squares like in the design */}
                 <img
-                  src="/src/assets/Group.png"
+                  src={GroupOne}
                   alt=""
                   style={{ width: "32px", height: "32px", objectFit: "contain", flexShrink: 0 }}
                 />

@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import starsImg from "../assets/Stars.png";
+import heroVideo from "../assets/hero-video.mp4";
+import gridImg from "../assets/Grid.png";
 
 /* ─── Helpers ──────────────────────────────────────── */
 function useCountUp(target, duration = 2000, started = false) {
@@ -65,7 +67,7 @@ export default function Hero() {
 
         {/* Grid / Line */}
         <img
-          src="/src/assets/Grid.png"
+          src={gridImg}
           alt=""
           style={{
             position: "absolute",
@@ -333,7 +335,7 @@ function VideoBlock({ onOpen }) {
         transition: "transform 0.3s ease",
       }}>
       <video
-        src="/src/assets/hero-video.mp4"
+        src={heroVideo}
         style={{ width: "100%", height: "100%", objectFit: "cover" }}
         muted preload="metadata"
       />

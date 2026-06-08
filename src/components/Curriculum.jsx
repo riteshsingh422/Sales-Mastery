@@ -1,6 +1,9 @@
 import BackgroundImg from "/src/assets/curriculum-bg.png";
 import BubbleBg from "/src/assets/background2.png";
 import YourJourneyImg from "/src/assets/yourjourney.png";
+import video1 from "/src/assets/video1.mp4";
+import video2 from "/src/assets/video2.mp4";
+import heroVideo from "/src/assets/hero-video.mp4";
 
 const cardStyle = {
   width: "100%",
@@ -81,37 +84,37 @@ const cards = [
     day: "Day 9-10",
     title: "Capturing Attention and Building Authority",
     desc: "Learn to grab attention instantly and establish yourself as an authoritative figure in sales.",
-    video: "/src/assets/video1.mp4",
+    video: video1,
   },
   {
     day: "Day 11",
     title: "Mastering the Opening",
     desc: "Perfect your opening lines and set the tone for productive, engaging sales conversations.",
-    video: "/src/assets/video2.mp4",
+    video: video2,
   },
   {
     day: "Day 12-15",
     title: "Uncovering Interest, Needs, and Pain Points",
     desc: "Explore techniques to identify and address the unique interests, needs, and pain points of your prospects.",
-    video: "/src/assets/hero-video.mp4",
+    video: heroVideo,
   },
   {
     day: "Day 16-17",
     title: "Being the Solution to Their Problem",
     desc: "Craft compelling solutions that resonate with your audience's desires and aspirations.",
-    video: "/src/assets/video1.mp4",
+    video: video1,
   },
   {
     day: "Day 18-19",
     title: "The Art of Closing",
     desc: "Master the fine art of closing deals with confidence and finesse.",
-    video: "/src/assets/video2.mp4",
+    video: video2,
   },
   {
     day: "Day 20-21",
     title: "Payment Details and Follow-Up Strategies",
     desc: "Navigate the crucial final days, understanding payment processes, and implementing effective follow-up strategies for sustained success.",
-    video: "/src/assets/hero-video.mp4",
+    video: heroVideo,
   },
 ];
 
